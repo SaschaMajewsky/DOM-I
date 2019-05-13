@@ -39,7 +39,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // nav
 const navBarAnchors = document.querySelectorAll('a');
@@ -54,8 +54,11 @@ navBarAnchors.forEach(element => element.style.color = 'green')
 
 // cta
 const ctaHeadline = document.querySelector('h1');
-ctaHeadline.innerHTML = "DOM<br> Is<br> Awesome"
-// this is a little bit off, but now it is stacked up as "awesome" is overflowing. Whitespace pre didn't work out.
+ctaHeadline.innerHTML = "DOM<br> Is<br> Awesome";
+
+/* const ctaImg = document.getElementByID('cta-img') */ // alternative version
+const ctaImg = document.querySelector("#cta-img");
+ctaImg.src = "img/header-img.png";
 
 /* const ctaButton = document.getElementsByTagName('button') */ // alternative version
 const ctaButton = document.querySelector("button");
@@ -63,16 +66,12 @@ ctaButton.textContent = "Get Started"
 ctaButton.addEventListener('click', (event) => { 
   funkyButton.style.backgroundColor = "white"; 
   document.body.style.background = "white";
+  ctaImg.src = "img/header-img.png";
 });
-
-/* const ctaImg = document.getElementByID('cta-img') */ // alternative version
-const ctaImg = document.querySelector("#cta-img");
-ctaImg.src = "img/header-img.png"
 
 /* const ctaText = document.getElementsByClassName('cta-text') */ // alternative version
 const ctaText = document.querySelector(".cta-text");
 ctaText.style.width = "30%"
-
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -88,11 +87,9 @@ funkyButton.textContent = "Get Funky"
 funkyButton.addEventListener('click', (event) => { 
   event.target.style.backgroundColor = getRandomColor(); 
   document.body.style.background = getRandomColor();
+  ctaImg.src = "img/disco-ball.png";
 });
 ctaText.appendChild(funkyButton);
-
-
-
 
 // middle
 const middleImg = document.querySelector("#middle-img");
