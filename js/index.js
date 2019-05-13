@@ -61,7 +61,10 @@ ctaHeadline.style.width = "11rem"
 /* const ctaButton = document.getElementsByTagName('button') */ // alternative version
 const ctaButton = document.querySelector("button");
 ctaButton.textContent = "Get Started"
-
+ctaButton.addEventListener('click', (event) => { 
+  funkyButton.style.backgroundColor = "white"; 
+  document.body.style.background = "white";
+});
 
 /* const ctaImg = document.getElementByID('cta-img') */ // alternative version
 const ctaImg = document.querySelector("#cta-img");
@@ -70,6 +73,27 @@ ctaImg.src = "img/header-img.png"
 /* const ctaText = document.getElementsByClassName('cta-text') */ // alternative version
 const ctaText = document.querySelector(".cta-text");
 ctaText.style.width = "30%"
+
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const funkyButton = document.createElement("button");
+funkyButton.textContent = "Get Funky"
+funkyButton.addEventListener('click', (event) => { 
+  event.target.style.backgroundColor = getRandomColor(); 
+  document.body.style.background = getRandomColor();
+});
+ctaText.appendChild(funkyButton);
+
+
+
 
 // middle
 const middleImg = document.querySelector("#middle-img");
