@@ -54,9 +54,8 @@ navBarAnchors.forEach(element => element.style.color = 'green')
 
 // cta
 const ctaHeadline = document.querySelector('h1');
-ctaHeadline.textContent = "DOM Is Awesome"
+ctaHeadline.innerHTML = "DOM<br> Is<br> Awesome"
 // this is a little bit off, but now it is stacked up as "awesome" is overflowing. Whitespace pre didn't work out.
-ctaHeadline.style.width = "11rem"
 
 /* const ctaButton = document.getElementsByTagName('button') */ // alternative version
 const ctaButton = document.querySelector("button");
@@ -110,8 +109,6 @@ headerFour[5].textContent = "Contact"
 
 // contact
 const contactClassSelector = document.querySelector(".contact")
-contactClassSelector.style.width = "25%"
-
 // paragraphs main
 const paragraphs = document.querySelectorAll("p");
 paragraphs[0].textContent = siteContent["main-content"]["features-content"];
@@ -121,7 +118,7 @@ paragraphs[3].textContent = siteContent["main-content"]["product-content"];
 paragraphs[4].textContent = siteContent["main-content"]["vision-content"];
 
 // paragraphs contact
-paragraphs[5].textContent = siteContent["contact"]["address"];
+paragraphs[5].innerHTML = "123 Way 456 Street<br>Somewhere, USA"
 paragraphs[6].textContent = siteContent["contact"]["phone"];
 paragraphs[7].textContent = siteContent["contact"]["email"];
 
